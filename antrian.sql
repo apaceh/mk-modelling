@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2021 at 09:44 AM
+-- Generation Time: Apr 30, 2021 at 10:24 AM
 -- Server version: 5.7.24
--- PHP Version: 7.3.27
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,6 +91,21 @@ INSERT INTO `tb_utama` (`id`, `tanggal`, `id_user`, `id_ruang`, `no_antri`) VALU
 (4, '2021-04-05 14:43:13', 3, 3, 8),
 (5, '2021-04-20 15:47:11', 1, 6, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_login` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `pass` text NOT NULL,
+  `level` tinyint(1) NOT NULL,
+  `aktif` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -115,6 +130,12 @@ ALTER TABLE `tb_utama`
   ADD KEY `fk_to_ruang` (`id_ruang`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_login`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -135,6 +156,12 @@ ALTER TABLE `tb_ruang_kerja`
 --
 ALTER TABLE `tb_utama`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
