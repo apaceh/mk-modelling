@@ -41,6 +41,14 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Manajemen User </span></a>
       </li>
+      <li class="nav-item <?php if ($page == 'ruang') {
+                            echo 'active';
+                          }
+                          ?>">
+        <a class="nav-link" href="<?php echo base_url() ?>ruang">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Manajemen Ruang Kerja </span></a>
+      </li>
       <hr class="sidebar-divider">
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -60,7 +68,7 @@
                   User
                 </span> </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?php echo base_url() ?>user/logout">
+                <a class="dropdown-item" href="<?php echo base_url() ?>login/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>

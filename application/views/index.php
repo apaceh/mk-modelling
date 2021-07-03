@@ -25,7 +25,8 @@
                 <?php endforeach; ?>
 
                 <?php if (!$key->no_antri) : ?>
-                  <?//php else : ?>
+                  <? //php else : 
+                  ?>
                   Wait
                 <?php endif; ?>
               <?php endif; ?>
@@ -55,7 +56,8 @@
                 <?php endforeach; ?>
 
                 <?php if (!$key->no_antri) : ?>
-                  <?//php else : ?>
+                  <? //php else : 
+                  ?>
                   Wait
                 <?php endif; ?>
               <?php endif; ?>
@@ -88,6 +90,7 @@
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
               <h6 class="m-0 font-weight-bold text-primary">BANK JAGO SYARIAH</h6>
+              <a href="<?= base_url() ?>login/logout/" class="btn btn-sm btn-primary shadow-sm">Logout</a>
 
             </div>
             <!-- Card Body -->

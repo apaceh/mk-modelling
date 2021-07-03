@@ -31,6 +31,8 @@
                       echo "Admin";
                     } elseif ($usr['level'] == 2) {
                       echo "Teller/CS";
+                    } elseif ($usr['level'] == 3) {
+                      echo "Manajer";
                     }
                     ?></td>
                 <td><?php echo $usr['user'] ?></td>
