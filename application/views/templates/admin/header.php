@@ -22,38 +22,40 @@
 
 <body id="page-top">
   <div id="wrapper">
-    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-          <i class="fas fa-fw fa-user"></i>
+    <?php if (!isset($no_sidebar)) : ?>
+      <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark" id="accordionSidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <div class="sidebar-brand-icon">
+            <i class="fas fa-fw fa-user"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">Admin</div>
+        </a>
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">
+          Menu
         </div>
-        <div class="sidebar-brand-text mx-3">Admin</div>
-      </a>
-      <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Menu
-      </div>
-      <li class="nav-item <?php if ($page == 'user') {
-                            echo 'active';
-                          }
-                          ?>">
-        <a class="nav-link" href="<?php echo base_url() ?>user">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Manajemen User </span></a>
-      </li>
-      <li class="nav-item <?php if ($page == 'ruang') {
-                            echo 'active';
-                          }
-                          ?>">
-        <a class="nav-link" href="<?php echo base_url() ?>ruang">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Manajemen Ruang Kerja </span></a>
-      </li>
-      <hr class="sidebar-divider">
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-    </ul>
+        <li class="nav-item <?php if ($page == 'user') {
+                              echo 'active';
+                            }
+                            ?>">
+          <a class="nav-link" href="<?php echo base_url() ?>user">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Manajemen User </span></a>
+        </li>
+        <li class="nav-item <?php if ($page == 'ruang') {
+                              echo 'active';
+                            }
+                            ?>">
+          <a class="nav-link" href="<?php echo base_url() ?>ruang">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Manajemen Ruang Kerja </span></a>
+        </li>
+        <hr class="sidebar-divider">
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+    <?php endif; ?>
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <nav class="navbar navbar-expand navbar-light bg-gradient-info topbar mb-4 static-top shadow">
@@ -61,11 +63,10 @@
             <i class="fa fa-bars text-white"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white small">
-                  User
+                  <?= $this->session->userdata('username'); ?>
                 </span> </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="<?php echo base_url() ?>login/logout">

@@ -24,10 +24,12 @@ class Login extends CI_Controller
 		} else {
 			// cek password
 			if (password_verify($password, $user['pass'])) {
-				$data = ['username' => $user['user'], 'level' => $user['level']];
+				$data = ['username' => $user['user'], 'level' => $user['level'], 'id_user' => $user['id_login']];
 				$this->session->set_userdata($data);
 				if ($user['level'] == 1) {
 					redirect('user');
+				} else if ($user['level'] == 2) {
+					redirect('kontrolAntrian');
 				} else {
 					redirect('dashboard');
 				}
